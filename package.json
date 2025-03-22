@@ -17,5 +17,10 @@
     "pixi.js": "8.9.0",
     "typescript": "5.8.2",
     "vite": "6.2.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

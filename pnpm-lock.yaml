@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: ^22.13.11
+        specifier: 22.13.11
         version: 22.13.11
       pixi.js:
-        specifier: ^8.9.0
+        specifier: 8.9.0
         version: 8.9.0
       typescript:
-        specifier: ^5.8.2
+        specifier: 5.8.2
         version: 5.8.2
       vite:
-        specifier: ^6.2.2
+        specifier: 6.2.2
         version: 6.2.2(@types/node@22.13.11)
 
 packages:
