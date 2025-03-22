@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PixiJS Image Editor</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #f0f0f0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #app {
+        width: 800px;
+        height: 600px;
+        background: white;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      .controls {
+        width: 800px;
+        margin: 20px auto;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+      #textControls {
+        display: none;
+        margin-left: 10px;
+        padding: 5px 10px;
+        background: rgba(240, 240, 240, 0.9);
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      #textControls.active {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+      label {
+        margin-right: 5px;
+        font-size: 14px;
+        color: #444;
+      }
+      .font-size-control {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .font-size-control input[type="range"] {
+        width: 100px;
+        height: 5px;
+      }
+      .font-size-control .size-value {
+        min-width: 30px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        padding: 2px 5px;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+      }
+      .font-size-buttons {
+        display: flex;
+        gap: 5px;
+        margin-top: 5px;
+      }
+      .font-size-btn {
+        font-size: 12px;
+        padding: 2px 5px;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .font-size-btn:hover {
+        background: #e5e5e5;
+      }
+      .color-control {
+        display: flex;
+        align-items: center;
+      }
+      input[type="color"] {
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="controls">
+      <input type="file" id="imageInput" accept="image/*" />
+      <input type="file" id="videoInput" accept="video/*" />
+      <button id="addTextBtn">添加文本</button>
+      <button id="playVideoBtn" style="display: none;">播放视频</button>
+      <div id="textControls">
+        <div class="color-control">
+          <label for="textColor">颜色:</label>
+          <input type="color" id="textColor" value="#000000" />
+        </div>
+        <div class="font-size-control">
+          <label for="fontSize">字号:</label>
+          <input type="range" id="fontSize" min="8" max="72" value="24" step="1" />
+          <span id="fontSizeValue" class="size-value">24</span>
+          <div class="font-size-buttons">
+            <button class="font-size-btn" data-size="12">12</button>
+            <button class="font-size-btn" data-size="16">16</button>
+            <button class="font-size-btn" data-size="24">24</button>
+            <button class="font-size-btn" data-size="36">36</button>
+            <button class="font-size-btn" data-size="48">48</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html> 
